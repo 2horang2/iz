@@ -69,7 +69,6 @@
 			<div class="logo" data-type="image">
 				<!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
 				<a class="image" href="#"><img class="max-w-[100px] max-h-[40px]"
-											   src="assets/img/logo/iz-logo.png"
 											   alt="" /></a>
 				<a class="text text-black uppercase font-poppins text-[22px]
 							font-extrabold tracking-[2px] leading-[50px]"
@@ -92,7 +91,7 @@
 			<div class="wrapper">
 				<div class="avatar w-[70px] h-[70px] relative float-right mb-[60px]">
 					<div class="image absolute inset-0 bg-no-repeat bg-cover bg-center"
-						 data-img-url="assets/img/main/main1.jpg"></div>
+						 data-img-url="assets/img/main/main5.gif"></div>
 				</div>
 				<div class="menu_list w-full h-auto clear-both float-left mb-[50px]">
 					<ul class="transition_link">
@@ -145,8 +144,7 @@
 		<div class="logo" data-type="image">
 			<!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
 			<a class="image" href="#"><img class="max-w-[110px] max-h-[65px]
-							inline-block"
-										   src="assets/img/logo/iz-logo.png" alt="" /></a>
+							inline-block" alt="" /></a>
 			<a class="text no-underline text-black uppercase font-poppins text-[25px]
 						font-extrabold tracking-[2px] leading-[70px]"
 			   href="#"><span class="relative top-[2px]">Cavani</span></a>
@@ -191,9 +189,9 @@
 				middle:inset-x-0 middle:bottom-0 middle:top-[55px]">
 		<div class="author_image absolute top-0 left-0 bottom-0 w-[40%] z-[15]">
 			<div class="main absolute inset-0 bg-no-repeat bg-cover bg-center"
-				 data-img-url="assets/img/main/main1.jpg"></div>
+				 data-img-url="assets/img/main/main5.gif"></div>
 		</div>
-		<div class="main_content absolute top-0 right-0 bottom-0 w-[60%]">
+		<div class="main_content absolute top-0 right-0 bottom-0 w-[60%]" >
 
 			<!-- HOME -->
 			<div class="cavani_tm_section animated" id="home">
@@ -765,18 +763,28 @@
 
 								<li class="mr-[40px] inline-block">
 									<form>
-										<button type="button" onclick="dataFilterList('현금');">현금</button>
+										<button type="button" onclick="dataFilterList('분류예비부부');">예비부부</button>
 									</form>
 								</li>
 
 								<li class="mr-[40px] inline-block">
 									<form>
-										<button type="button" onclick="dataFilterList('현물');">현물</button>
+										<button type="button" onclick="dataFilterList('분류유공자');">유공자</button>
 									</form>
 								</li>
 								<li class="mr-[40px] inline-block">
 									<form>
-										<button type="button" onclick="dataFilterList('바우처');">바우처</button>
+										<button type="button" onclick="dataFilterList('분류학생');">학생</button>
+									</form>
+								</li>
+								<li class="mr-[40px] inline-block">
+									<form>
+										<button type="button" onclick="dataFilterList('분류환자');">환자</button>
+									</form>
+								</li>
+								<li class="mr-[40px] inline-block">
+									<form>
+										<button type="button" onclick="dataFilterList('분류구직자');">구직자</button>
 									</form>
 								</li>
 								<li class="mr-[40px] inline-block">
@@ -799,7 +807,7 @@
 										let box = '';
 
 										var jsonData = JSON.parse(testData);
-										for (var i = 0; i < jsonData.length; i++) {
+										for (var i = 0; i < jsonData.length ; i++) {
 											var serviceData = jsonData[i];
 
 											box =
@@ -807,10 +815,10 @@
 											<div class="list_inner w-full h-1/2 clear-both float-left relative overflow-hidden" >
 												<div class="image relative">
 												  <div class="details hidden opacity-0 "></div>
-												  	<div class="main absolute inset-0 bg-no-repeat bg-cover bg-center" style="z-index: 1;" data-img-url="assets/img/logo/flower-sample.png">
+												  	<div class="main absolute inset-0 bg-no-repeat bg-cover bg-center" style="z-index: 1;" data-img-url="assets/img/logo/side-test5.png">
 														 <div class="serviceBoxContent absolute bottom-0 left-0 right-0 px-4 py-2 text-center pb-[10px] pt-[10px]" data-img-url="assets/img/thumbs/4-2.jpg">
 														 	<h3 class="text-[16px] mb-[2px] font-semibold">${serviceData.서비스명}</h3>
-															<span class="text-[14px]">${serviceData.부서명}</span>
+															<span class="text-[14px]">${serviceData.소관기관명}</span>
 													  	</div>
 												  	</div>
 												  	<img class="relative opacity-0 min-w-full" src="assets/img/thumbs/1-1.jpg" alt="" />
@@ -818,8 +826,20 @@
 												  </div>
 												  <div class="hidden_content hidden opacity-0 invisible absolute z-[-111]">
 														<div class="popup_details w-full h-auto clear-both float-left">
+
+															<h1 class="text-[25px] mb-[2px] font-semibold">${serviceData.서비스명}</h1>
+															</br>
+															<span class="text-[16px] mb-[2px]">️${serviceData.소관기관명}</span>
+															<span class="text-[16px] mb-[2px] font-semibold"><a target="_blank" href="${serviceData.상세조회URL}"> 신청하러 가기  🙋🏻‍♀️🙋🏻‍♂️</a></span>
+															</br></br></br></br>
+
 															<div class="main_details w-full h-auto clear-both flex mb-[60px]">
 																<div class="textbox w-[70%] pr-[40px]">
+<p hidden>️${serviceData.분류예비부부}</p>
+<p class="hidden">️${serviceData.분류학생}</p>
+<p class="hidden">️${serviceData.분류유공자}</p>
+<p class="hidden">️${serviceData.분류환자}</p>
+<p class="hidden">️${serviceData.분류구직자}</p>
 																	<h5 class="text-[16px] mb-[2px] font-semibold">🪄서비스목적</h5>
 																	<p class="mb-[15px]">${serviceData.서비스목적}</p>
 																	<p class="mb-[15px]">          </p>
@@ -834,7 +854,6 @@
 																	<p class="mb-[15px]">${serviceData.신청방법}</p>
 																	</br>
 																	</br>
-																	<h5 class="text-[16px] mb-[2px] font-semibold"><a target="_blank" href="${serviceData.상세조회URL}">🙋🏻‍♀️🙋🏻‍♂️신청하러 가기</a></h5>
 																</div>
 																<div class="detailbox w-[30%] pl-[40px]">
 																	<ul>
@@ -847,7 +866,7 @@
 																			<span><a class="text-[#7d7789]" href="#">${serviceData.소관기관명}</a></span>
 																		</li>
 																		<li class="mb-[10px] w-full float-left">
-																			<span class="first font-bold block">조회수</span>
+																			<span class="first font-bold block">조회 수</span>
 																			<span>${serviceData.조회수}</span>
 																		</li>
 																	</ul>
@@ -863,8 +882,8 @@
 
 										$('#test').append(printData);
 
+
 	   									 var totalList = document.getElementById("test");
-	   									 console.log(totalList);
 									</script>
 							</ul>
 						</div>
@@ -1651,7 +1670,7 @@
 						<div class="form w-full h-auto clear-both flex">
 							<div class="left w-1/2 pr-[15px]">
 								<div class="fields w-full h-auto clear-both float-left">
-									<form action="/" method="post" class="contact_form"
+									<form action="https://script.google.com/macros/s/AKfycbwKxj2i4Y48lSnMJZD_PPJmsxKpMPEDYx8DImgMONyYFM3iGIw_lp1XSmfQRRT2gGi15w/exec" method="post" class="gform" data-email="shciz.official@gmail.com"
 										  id="contact_form">
 										<div class="returnmessage"
 											 data-success="Your message has been received, We will contact you
@@ -1674,7 +1693,7 @@
 											<textarea id="message" placeholder="Message"></textarea>
 										</div>
 										<div class="cavani_tm_button">
-											<a id="send_message" href="mailto:shciz.official@gmail.com">메시지 전송</a>
+											<a id="send_message" href="#">메시지 전송</a>
 										</div>
 
 										<!-- If you want change mail address to yours, just open "modal" folder >> contact.php and go to line 4 and change detail to yours.  -->

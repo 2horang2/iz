@@ -201,12 +201,12 @@ function cavani_tm_portfolio_popup(){
 		var element = jQuery(this);
 		var parent 	= element.closest('.list_inner');
 		var content = parent.find('.hidden_content').html();
-		var image	= parent.find('.image .main').data('img-url');
+		//var image	= parent.find('.image .main').data('img-url');
 		var details = parent.find('.details').html();
 		modalBox.addClass('opened');
 		modalBox.find('.description_wrap').html(content);
-		modalBox.find('.popup_details').prepend('<div class="top_image"><img src="assets/img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="'+image+'"></div></div>');
-		modalBox.find('.popup_details .top_image').after('<div class="portfolio_main_title">'+details+'<div>');
+		//modalBox.find('.popup_details').prepend('<div class="top_image"><img src="assets/img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="'+image+'"></div></div>');
+		//modalBox.find('.popup_details .top_image').after('<div class="portfolio_main_title">'+details+'<div>');
 		cavani_tm_data_images();
 		return false;
 	});
