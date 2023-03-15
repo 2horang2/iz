@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @layer components{
+
+
     ul,li{
         @apply p-0 m-0;
     }
@@ -595,4 +597,8 @@
     .cavani_tm_news .news_list > ul > li{
         @apply small:py-[20px] small:px-0;
     }
+
+
+
+
 }

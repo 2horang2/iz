@@ -34,6 +34,12 @@ jQuery(document).ready(function(){
 	jQuery(window).load('body', function(){
 		cavani_tm_my_load();
 	});
+
+
+      $('.button-container button').click(function() {
+        $('.button-container button').removeClass('active');
+        $(this).addClass('active');
+      });
 	
 });
 

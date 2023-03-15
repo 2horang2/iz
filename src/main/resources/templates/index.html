@@ -40,6 +40,58 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
 	<!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
 	<!-- /STYLES -->
+	<style>
+.button-container {
+  display: flex;
+  flex-wrap: wrap; /* 버튼들을 감싸는 영역 넘침 처리 */
+  justify-content: center; /* 버튼들을 수평 중앙 정렬 */
+  gap: 10px; /* 버튼 간의 간격 지정 */
+}
+
+button {
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  color: gray;
+  font-size: 14px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover, button.active {
+  background-color: #ccc;
+  color: white;
+}
+
+.button-container > *:nth-child(3n+1) {
+  margin-right: auto;
+}
+
+.button-container > *:nth-child(-n+3) {
+  margin-bottom: 20px;
+}
+
+
+input[type="text"] {
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  color: gray;
+  font-size: 14px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+input[type="text"]:hover {
+  background-color: #ccc;
+}
+
+  </style>
 
 </head>
 
@@ -191,7 +243,7 @@
 			<div class="main absolute inset-0 bg-no-repeat bg-cover bg-center"
 				 data-img-url="assets/img/main/main5.gif"></div>
 		</div>
-		<div class="main_content absolute top-0 right-0 bottom-0 w-[60%]" >
+		<div class="main_content absolute top-0 right-0 bottom-0 w-[60%]" ">
 
 			<!-- HOME -->
 			<div class="cavani_tm_section animated" id="home">
@@ -751,53 +803,53 @@
 											class="inline-block relative font-poppins text-[#333] uppercase
 										font-bold tracking-[8px]">공공서비스 목록</span>
 						</div>
-						<div
+							<div
 								class="portfolio_filter w-full h-auto clear-both float-left text-left
 									relative px-0 pt-[55px] pb-[42px]">
-							<ul>
+							<ul class="button-container">
 								<li class="mr-[40px] inline-block">
 									<form>
-										<button type="button" onclick="dataFilterList('ALL');">전체보기</button>
+										<button type="button" class="button" onclick="dataFilterList('ALL');">전체보기</button>
 									</form>
 								</li>
 
 								<li class="mr-[40px] inline-block">
 									<form>
-										<button type="button" onclick="dataFilterList('분류예비부부');">예비부부</button>
+										<button type="button" class="button" onclick="dataFilterList('예비부부');">예비부부</button>
 									</form>
 								</li>
 
 								<li class="mr-[40px] inline-block">
 									<form>
-										<button type="button" onclick="dataFilterList('분류유공자');">유공자</button>
+										<button type="button"  class="button" onclick="dataFilterList('유공자');">유공자</button>
 									</form>
 								</li>
 								<li class="mr-[40px] inline-block">
 									<form>
-										<button type="button" onclick="dataFilterList('분류학생');">학생</button>
+										<button type="button" class="button" onclick="dataFilterList('학생');">학생</button>
 									</form>
 								</li>
 								<li class="mr-[40px] inline-block">
 									<form>
-										<button type="button" onclick="dataFilterList('분류환자');">환자</button>
+										<button type="button" class="button" onclick="dataFilterList('환자');">환자</button>
 									</form>
 								</li>
 								<li class="mr-[40px] inline-block">
 									<form>
-										<button type="button" onclick="dataFilterList('분류구직자');">구직자</button>
+										<button type="button" class="button" onclick="dataFilterList('구직자');">구직자</button>
 									</form>
 								</li>
 								<li class="mr-[40px] inline-block">
 								<form>
-									<input type="text" id="search" name="search">
-									<button type="button" onclick="dataFilterList('searchBtn');">검색</button>
+									<input type="text" class="input" id="search" name="search">
+									<button type="button" class="button" onclick="dataFilterList('searchBtn');">검색</button>
 								</form>
 								</li>
 							</ul>
 						</div>
 
 						<script src="./json/data.json" type="text/javascript"  ></script>
-						<div class="portfolio_list w-full h-auto clear-both float-left">
+						<div class="portfolio_list w-full h-auto clear-both float-left" >
 							<ul class="gallery_zoom ml-[-50px]" id="test">
 								<script type="text/javascript">
 
@@ -807,7 +859,8 @@
 										let box = '';
 
 										var jsonData = JSON.parse(testData);
-										for (var i = 0; i < jsonData.length ; i++) {
+										//jsonData.length
+										for (var i = 0; i < 3000 ; i++) {
 											var serviceData = jsonData[i];
 
 											box =
