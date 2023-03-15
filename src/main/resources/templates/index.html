@@ -41,6 +41,30 @@
 	<!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
 	<!-- /STYLES -->
 	<style>
+
+.portfolio_list {
+   max-height: 600px; /* 스크롤이 생길 기준 높이 */
+  overflow-y: scroll; /* 세로 스크롤 활성화 */
+padding-right: 10px; / 오른쪽 패딩 추가 */
+}
+
+/* 아래의 모든 코드는 영역::코드로 사용 */
+.portfolio_list::-webkit-scrollbar {
+    width: 10px;  /* 스크롤바의 너비 */
+}
+
+.portfolio_list::-webkit-scrollbar-thumb {
+    height: 10%; /* 스크롤바의 길이 */
+    background: #217af4; /* 스크롤바의 색상 */
+
+    border-radius: 10px;
+}
+
+.portfolio_list::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+border-radius: 10px;
+}
+
 .button-container {
   display: flex;
   flex-wrap: wrap; /* 버튼들을 감싸는 영역 넘침 처리 */
@@ -59,6 +83,7 @@ button {
   text-decoration: none;
   transition-duration: 0.4s;
   cursor: pointer;
+  width : 100px
 }
 
 button:hover, button.active {
@@ -162,21 +187,9 @@ input[type="text"]:hover {
 				</div>
 				<div class="social w-full float-left mb-[5px]">
 					<ul>
-						<li class="mr-[8px] inline-block"><a class="text-[#333]" href="#"><img
-								class="svg"
-								src="assets/img/svg/social/facebook.svg" alt="" /></a></li>
-						<li class="mr-[8px] inline-block"><a class="text-[#333]" href="#"><img
-								class="svg"
-								src="assets/img/svg/social/twitter.svg" alt="" /></a></li>
-						<li class="mr-[8px] inline-block"><a class="text-[#333]" href="#"><img
+						<li class="mr-[8px] inline-block"><a class="text-[#333]" target='_blank' href="https://www.instagram.com/shciz.official/"><img
 								class="svg"
 								src="assets/img/svg/social/instagram.svg" alt="" /></a></li>
-						<li class="mr-[8px] inline-block"><a class="text-[#333]" href="#"><img
-								class="svg"
-								src="assets/img/svg/social/dribbble.svg" alt="" /></a></li>
-						<li class="inline-block"><a class="text-[#333]" href="#"><img
-								class="svg"
-								src="assets/img/svg/social/tik-tok.svg" alt="" /></a></li>
 					</ul>
 				</div>
 				<div class="copyright w-full float-left">
@@ -1843,7 +1856,7 @@ input[type="text"]:hover {
 		</div>
 		<div class="social">
 			<ul>
-				<li class="mr-[15px] inline-block"><a class="text-[#333]" href="#"><img
+				<li class="mr-[15px] inline-block"><a class="text-[#333]" target='_blank' href="https://www.instagram.com/shciz.official/"><img
 						class="svg inline-block"
 						src="assets/img/svg/social/instagram.svg" alt="" /></a></li>
 			</ul>
