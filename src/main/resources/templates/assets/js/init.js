@@ -276,7 +276,7 @@ function cavani_tm_service_popup(){
 		var content = parent.find('.service_hidden_details').html();
 		modalBox.addClass('opened');
 		modalBox.find('.description_wrap').html(content);
-		modalBox.find('.service_popup_informations').prepend('<div class="image"><img src="assets/img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="'+elImage+'"></div></div>');
+		modalBox.find('.service_popup_informations').prepend('<div class="image"><img src="assets/img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="'+elImage+'"></div></div>');
 		cavani_tm_data_images();
 		modalBox.find('.service_popup_informations .image').after('<div class="main_title"><h3>'+title+'</h3></div>');
 		return false;
