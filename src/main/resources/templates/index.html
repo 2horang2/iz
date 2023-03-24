@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en"> <!--<![endif]-->
-
+<!DOCTYPE HTML>
+<html>
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-33XBTKD00F"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
 
+	  gtag('config', 'G-33XBTKD00F');
+	</script>
+
+
+	<link rel="icon" href="assets/img/partners/1.png">	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<meta name="description" content="Name of your web site">
@@ -882,6 +888,24 @@ input[type="text"]:hover {
 												imageName="assets/img/logo/serviceCard5.jpg"
 											}
 
+											let targetTitle ="선정기준";
+											let targetContent="";
+											if(serviceData.선정기준 == "null" ){
+												targetContent = serviceData.선정기준;
+											} else{
+												targetTitle="지원대상";
+												targetContent = serviceData.지원대상;
+											}
+
+											let serviceGoalTitle = "서비스목적";
+											let serviceGoalContent="";
+											if(serviceData.서비스목적 == "null" ){
+												serviceGoalContent = serviceData.서비스목적;
+											} else{
+												serviceGoalTitle="지원내용";
+												serviceGoalContent = serviceData.지원내용;
+											}
+
 
 											box =
 									    `<li data-item="action" class="detail mb-[50px] w-1/2 float-left pl-[50px]">
@@ -913,13 +937,13 @@ input[type="text"]:hover {
 <p class="hidden">️${serviceData.분류유공자}</p>
 <p class="hidden">️${serviceData.분류환자}</p>
 <p class="hidden">️${serviceData.분류구직자}</p>
-																	<h5 class="text-[16px] mb-[2px] font-semibold">🪄서비스목적</h5>
-																	<p class="mb-[15px]">${serviceData.서비스목적}</p>
+																	<h5 class="text-[16px] mb-[2px] font-semibold">🪄${serviceGoalTitle}</h5>
+																	<p class="mb-[15px]">${serviceGoalContent}</p>
 																	<p class="mb-[15px]">          </p>
 																	</br>
 																	</br>
-																	<h5 class="text-[16px] mb-[2px] font-semibold">🪄선정기준</h5>
-																	<p class="mb-[15px]">${serviceData.선정기준}</p>
+																	<h5 class="text-[16px] mb-[2px] font-semibold">🪄${targetTitle}</h5>
+																	<p class="mb-[15px]">${targetContent}</p>
 																	<p class="mb-[15px]">          </p>
 																	</br>
 																	</br>
